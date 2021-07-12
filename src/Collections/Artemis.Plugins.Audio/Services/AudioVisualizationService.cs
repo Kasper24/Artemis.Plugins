@@ -116,7 +116,7 @@ namespace Artemis.Plugins.Audio.Services
             // Pass Enumerator instance from NAudioDeviceEnumerationService
             // Could also pass the Service to register events to update EndPoint on default device change.
 
-            _audioInput = new NAudioAudioInput(_naudioDeviceEnumerationService, _useCustomWasapiCapture.Value, _logger);
+            _audioInput = new OpenALAudioInput();
             _audioInput.Initialize();
 
             _audioBuffer = new AudioBuffer(4096); // Working with ~93ms
